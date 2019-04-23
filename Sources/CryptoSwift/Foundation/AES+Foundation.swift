@@ -17,8 +17,8 @@ import Foundation
 
 extension AES {
     /// Initialize with CBC block mode.
-    public convenience init(key: String, iv: Array<UInt8>, padding: Padding = .pkcs7) throws {
-        try self.init(key: key.bytes, blockMode: CBC(iv: iv), padding: padding)
+    public convenience init(key: Array<UInt8>, iv: Array<UInt8>, padding: Padding = .pkcs7) throws {
+        try self.init(key: key, blockMode: CBC(iv: iv), padding: padding)
     }
 
     public convenience init(key: String, iv: String, padding: Padding = .pkcs7) throws {
